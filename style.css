@@ -64,7 +64,7 @@ li {
 .edit-input {
   box-sizing: border-box;
   display: none;
-  width: 580px;
+  width: 70%;
   padding: 5px;
   border: 1px solid greenyellow;
   border-radius: 5px;
@@ -131,7 +131,7 @@ span {
   }
   .edit-input {
     box-sizing: border-box;
-    width: 340px;
+    width: 65%;
     left: 30px;
     top: 15px;
   }
@@ -179,7 +179,7 @@ span {
   }
   .edit-input {
     box-sizing: border-box;
-    width: 160px;
+    width: 55%;
     left: 30px;
     top: 10px;
   }
