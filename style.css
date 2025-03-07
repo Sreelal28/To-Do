@@ -72,7 +72,7 @@ li {
   caret-color: crimson;
   position: absolute;
   left: 30px;
-  top: 15px;
+  top: 20px;
 }
 .task-text {
   flex-grow: 1;
@@ -133,7 +133,7 @@ span {
     box-sizing: border-box;
     width: 340px;
     left: 30px;
-    top: 10px;
+    top: 15px;
   }
   .save-btn {
     right: 65px;
@@ -179,13 +179,16 @@ span {
   }
   .edit-input {
     box-sizing: border-box;
-    width: 140px;
+    width: 160px;
     left: 30px;
-    top: 5px;
+    top: 10px;
   }
   .task-text {
     flex-grow: 1;
     width: 200px;
+  }
+  .save-btn {
+    right: 55px;
   }
   img {
     height: 30px;
