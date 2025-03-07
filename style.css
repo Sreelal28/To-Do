@@ -15,12 +15,13 @@ body {
   background-color: rgba(195, 195, 5, 0.6);
   padding: 15px;
   border-radius: 25px;
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 770px;
   text-align: center;
 }
 input {
-  width: 380px;
+  vertical-align: top;
+  width: 600px;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px dotted red;
@@ -44,9 +45,10 @@ button:hover {
   transform: scale(1.1);
 }
 ul {
-  max-height: 325px;
+  max-height: 590px;
   overflow: auto;
-  padding: 10px;
+  padding: 15px;
+  scrollbar-gutter: stable;
 }
 li {
   padding: 3px;
@@ -57,18 +59,24 @@ li {
   justify-content: space-between;
   align-items: center;
   font-weight: bolder;
+  position: relative;
 }
 .edit-input {
+  box-sizing: border-box;
   display: none;
-  width: 100%;
+  width: 580px;
   padding: 5px;
   border: 1px solid greenyellow;
   border-radius: 5px;
   margin-right: 10px;
   caret-color: crimson;
+  position: absolute;
+  left: 30px;
+  top: 15px;
 }
 .task-text {
   flex-grow: 1;
+  width: 600px;
 }
 li button {
   background-color: transparent;
@@ -77,6 +85,8 @@ li button {
   cursor: pointer;
 }
 .save-btn {
+  position: absolute;
+  right: 75px;
   display: none;
   background-color: transparent;
 }
@@ -86,8 +96,8 @@ li button:hover {
   transition: 200ms ease;
 }
 img {
-  height: 40px;
-  width: 40px;
+  height: 50px;
+  width: 50px;
 }
 span {
   width: 80%;
@@ -96,4 +106,94 @@ span {
   width: 20px;
   height: 20px;
   margin: 0;
+}
+@media (max-width: 940px) {
+  h1 {
+    font-size: x-large;
+  }
+  .container {
+    background-color: rgba(240, 233, 255, 0.6);
+    border-radius: 20px;
+    width: 530px;
+    height: 520px;
+  }
+  input {
+    vertical-align: 2px;
+    width: 350px;
+  }
+  button {
+    background-color: rgba(8, 0, 255, 0.6);
+    color: white;
+  }
+  ul {
+    max-height: 370px;
+    padding: 10px;
+  }
+  .edit-input {
+    box-sizing: border-box;
+    width: 340px;
+    left: 30px;
+    top: 10px;
+  }
+  .save-btn {
+    right: 65px;
+  }
+  .task-text {
+    flex-grow: 1;
+    width: 200px;
+  }
+  img {
+    height: 40px;
+    width: 40px;
+  }
+  .check-box {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: larger;
+  }
+  .container {
+    background-color: rgba(150, 200, 200, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    width: 330px;
+    height: 680px;
+  }
+  input {
+    vertical-align: top;
+    width: 250px;
+    border: 1px dotted red;
+  }
+  button {
+    background-color: rgba(255, 0, 0, 0.6);
+    color: white;
+  }
+  ul {
+    max-height: 520px;
+    padding: 5px;
+  }
+  .edit-input {
+    box-sizing: border-box;
+    width: 140px;
+    left: 30px;
+    top: 5px;
+  }
+  .task-text {
+    flex-grow: 1;
+    width: 200px;
+  }
+  img {
+    height: 30px;
+    width: 30px;
+  }
+  .check-box {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+  }
 }
