@@ -1,3 +1,35 @@
+function fetchTaskFromAPI() {
+  const taskList = document.getElementById("taskList");
+  const savedTasks = localStorage.getItem("local");
+  if (savedTasks) {
+    taskList.innerHTML = savedTasks;
+  }
+  const task = Math.floor(Math.random() * 200) + 1;
+  if (savedTasks === "") {
+    fetch(`https://jsonplaceholder.typicode.com/todos/${task}`)
+      .then((response) => response.json())
+      .then((data) => {
+        addTaskFromAPI(data.title);
+      })
+      .catch((error) => console.log("Error fetching task:", error));
+  }
+}
+
+function addTaskFromAPI(taskTitle) {
+  const taskList = document.getElementById("taskList");
+  const li = document.createElement("li");
+  li.innerHTML = `
+        <input type="checkbox" class="check-box" onclick="doneTask(this)">
+        <span class="task-text">${taskTitle}</span>
+        <input type="text" class="edit-input">
+        <button class="edit-btn" onclick="editTask(this)"><img src="./icons/edit.png"/></button>
+        <button class="save-btn" onclick="saveTask(this)"><img src="./icons/save.png" /></button>
+        <button onclick="removeTask(this)"><img src="./icons/delete.png" /></button>
+    `;
+  taskList.appendChild(li);
+  localStorage.setItem("local", taskList.innerHTML);
+}
+
 function addTask() {
   const taskInput = document.getElementById("inputTask");
   const taskList = document.getElementById("taskList");
@@ -86,5 +118,4 @@ function removeTask(button) {
   }
   localStorage.setItem("local", taskList.innerHTML);
 }
-const saved = localStorage.getItem("local");
-taskList.innerHTML = saved;
+fetchTaskFromAPI();
